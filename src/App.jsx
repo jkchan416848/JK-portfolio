@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBarContainer from "../src/Components/Navbar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Home from "./Components/home";
 import About from "./Components/about";
 import Contact from "./Components/contact";
@@ -10,16 +10,16 @@ import Project from "./Components/project";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <NavBarContainer />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/contact" element={<Contact />} />
-          <Route exact path="/skills" element={<Skills />} />
-          <Route exact path="/project" element={<Project />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/project" element={<Project />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
