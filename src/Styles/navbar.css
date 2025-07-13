@@ -1,0 +1,240 @@
+/* Navbar Container */
+.main-navbar-container {
+  z-index: 1000;
+  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(5px);
+}
+
+.main-navbar-container.scrolled {
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand styling */
+.brand-span span {
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #5aaedc;
+  font-size: 1.8rem;
+}
+.brand-span {
+  font-size: x-large;
+}
+
+/* Custom toggle button */
+.custom-toggler {
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  transition: transform 0.1s ease;
+}
+
+.custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  transform: rotate(90deg);
+}
+
+/* Nav link animations */
+.nav-link-item {
+  position: relative;
+  margin: 0 12px; 
+  padding: 2px 0 !important;
+  color: #cbd5e1 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 7px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link-item:hover {
+  color: #fff !important;
+}
+
+.nav-link-item:hover .nav-link-hover {
+  width: 100%;
+}
+
+/* Active link styling */
+.nav-link-item.active {
+  color: var(--primary-color1) !important;
+}
+
+.nav-link-item.active .nav-link-hover {
+  width: 100%;
+  background: linear-gradient(90deg, #599baa, #8b5cf6);
+}
+
+/* Mobile menu animation */
+.navbar-collapse {
+  transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: top right;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    width: 27%;
+    background: rgba(15, 23, 42, 0.247);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transform: scale(0.97);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navbar-collapse.show {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link-item {
+    margin: 8px 0;
+    padding-left: 15px !important;
+  }
+
+  .nav-link-hover {
+    left: 15px;
+    width: 0 !important;
+  }
+
+  .nav-link-item:hover .nav-link-hover,
+  .nav-link-item.active .nav-link-hover {
+    width: calc(100% - 15px) !important;
+  }
+}
+
+/* Custom Alert Styles */
+.custom-alert {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: #aec2c500;
+  border: 1px solid #eeeeff56;
+  backdrop-filter: blur(10px);
+  color: var(--primary-color1);
+  padding: 15px 20px;
+  border-radius: 7px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.alert-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-close {
+  background: transparent;
+  border: none;
+  color: var(--primary-color1);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 15px;
+  line-height: 1;
+}
+
+.progress-bar {
+  height: 4px;
+  width: 100%;
+  background: var(--primary-color1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: progress 5s linear forwards;
+}
+
+/* Animations */
+@keyframes drop-in {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  70% {
+    top: 25px;
+    opacity: 1;
+  }
+  85% {
+    top: 15px;
+  }
+  100% {
+    top: 20px;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    top: 20px;
+    opacity: 1;
+  }
+  to {
+    top: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.drop-in {
+  animation: drop-in 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.fade-out {
+  animation: fade-out 0.3s ease-in forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-alert {
+    width: 95%;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  @keyframes drop-in {
+    0% {
+      top: -100px;
+      opacity: 0;
+    }
+    70% {
+      top: 15px;
+      opacity: 1;
+    }
+    85% {
+      top: 10px;
+    }
+    100% {
+      top: 12px;
+    }
+  }
+}

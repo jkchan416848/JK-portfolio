@@ -1,0 +1,192 @@
+/* General Reset */
+body,
+h1,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Skill Header Styling */
+.Skill_header {
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 45px 0px;
+  color: var(--primary-color1);
+}
+
+/* Skills Container */
+.skills_container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.skills_container2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Default to 5 columns */
+  gap: 45px;
+  max-width: 1000px;
+  width: 75%;
+}
+
+.skills_container2 div {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  font-size: 3.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #cdcfcf;
+  transition: transform 0.15s, color 0.3s;
+  cursor: pointer;
+}
+
+.skills_container2 div i {
+  transition: color 0.1s;
+}
+
+/* Hover Effects */
+.skills_container2 div:hover {
+  transform: scale(1.1);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+.skills_container2 div:nth-of-type(1):hover {
+  color: #ff6347; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(2):hover {
+  color: #219ebc; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(3):hover {
+  color: #ffd60a; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(4):hover {
+  color: #3a0ca3; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(5):hover {
+  color: #00b4d8; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(6):hover {
+  color: #748cab; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(7):hover {
+  color: #2b9348; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(8):hover {
+  color: #03071e; /* Change the icon color on hover */
+}
+.skills_container2 div:nth-of-type(9):hover {
+  color: #ff4d6d; /* Change the icon color on hover */
+}
+
+/* Icon Label */
+.skills_container2 div::after {
+  content: attr(data-label); /* Use the data-label attribute for icon names */
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: #c6c9c9;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.skills_container2 div:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skills_container2 {
+    grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .skills_container2 {
+    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills_container2 {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+}
+
+/* Notification Styling - Fixed & Responsive */
+.notification {
+  position: fixed;
+  top: max(10px, env(safe-area-inset-top)); /* Safe area for mobile notches */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%; /* Responsive width */
+  max-width: 600px; /* Limits width on larger screens */
+  z-index: 1000;
+  opacity: 1;
+  animation: fadeOut 10s forwards;
+  padding: 0; /* Padding handled by inner component */
+  pointer-events: auto; /* Ensures clickable on mobile */
+}
+
+/* Fade out effect */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Mobile-first media query */
+@media (max-width: 768px) {
+  .notification {
+    top: max(10px, env(safe-area-inset-top)); /* Top safe area */
+    width: 95vw; /* Viewport units for better responsiveness */
+    max-width: 95vw;
+  }
+}
+
+
+.image_contain_div_response_parent {
+  box-shadow: 0px 0px 2px #fff;
+  max-width: 600px;
+  min-width: 300px;
+  /* background-color: red; */
+}
+.Skills_container_responsive_image_based_on_the_device {
+  /* border: 1px solid #fff; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 35px 0px;
+  height: 40vh;
+  width: 100%;
+  padding: 3px 4px;
+  color: #ffffff00;
+}
+.Change_device_namebased_on_width {
+  width: 250px;
+}
+/* pc image */
+@media (max-width: 998px) {
+  .image_contain_div_response_parent {
+    background-image: url("../assets/pc_mockupimg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 377px;
+    height: 300px;
+  }
+}
+/* mobile-image */
+@media (min-width: 999px) {
+  .image_contain_div_response_parent {
+    background-image: url("../assets/mobile_mockupimg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

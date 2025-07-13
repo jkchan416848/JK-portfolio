@@ -1,0 +1,39 @@
+@keyframes fadeIn1 {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.show1 {
+  opacity: 1;
+  transition: animation 0.4s ease-in-out;
+  animation: fadeIn1 0.4s forwards;
+}
+
+.animicon1 {
+  color: rgb(218, 46, 23);
+  animation-name: blink1;
+  animation-duration: 1.8s;
+  border-radius: 15px;
+  animation-iteration-count: infinite;
+}
+@keyframes blink1 {
+  0% {
+    box-shadow: inset 0px 0px 12px rgb(218, 46, 23);
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.5;
+    color: #fff;
+  }
+}
+
+.car_d:hover {
+  border: 1px solid #394f58;
+}
