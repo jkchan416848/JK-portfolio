@@ -5,6 +5,7 @@ import "../Styles/Aboutimageslider.css";
 import school from "../assets/school.jpg";
 import ug from "../assets/ug.jpg";
 import pg from "../assets/pg.jpg";
+import coaching from "../assets/coaching.jpg"
 
 function ImageSliderModule() {
   const [index, setIndex] = useState(0);
@@ -30,7 +31,7 @@ function ImageSliderModule() {
       description: "I decide to start coding & I start make the first step",
     },
     {
-      image: "https://scoonews.com/wp-content/uploads/2024/04/coaching-1.jpg",
+      image: coaching,
       title: "- Joing new institute -",
       description:
         "I'm really more intersted in frontend and Improving to learn more about design.",

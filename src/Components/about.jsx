@@ -32,7 +32,7 @@ function About() {
                 with today's React components
               </h1>{" "}
               <br />
-              <a href="/resume.pdf" download className="resume-button ">
+              <a href="resume.pdf" download className="resume-button ">
                 <span>
                   <i class="fa-solid fa-download"></i>
                 </span>{" "}
